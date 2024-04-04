@@ -1,0 +1,71 @@
+24 march 11:30 to do
+
+#login page
+1)validate the password in login page
+ # Check if the username exists in the student table
+            cursor.execute("SELECT * FROM student WHERE username = %s", (username,))
+            student = cursor.fetchone()
+
+            # Check if the username exists in the teacher table
+            cursor.execute("SELECT * FROM teacher WHERE username = %s", (username,))
+            teacher = cursor.fetchone()
+
+            if student:
+                if student['password'] == password:
+                    return 'student'
+            elif teacher:
+                if teacher['password'] == password:
+                    return 'teacher'
+            else:
+                return None
+
+task 1 done 3:36pm
+
+#use this login
+
+#login page
+2)save the login credentials in sessions
+#session['student_username'] = request.for.get['username']
+#session['admin_username'] = request.for.get['username']
+
+#student_username = session['student_username']
+task 2 done 3:36pm
+
+#std_home page
+3)with the sessions take the value from db and display in std home page
+use get_student_details field from db_class.py to populate
+
+task 3 done 3:36pm
+
+#course_select page
+4)in the course select page get the attributes of the selected course and feed it to the database
+#use the insert function in db_py to insert the values
+#std_registration page
+5)in the student registration page 
+
+a)get the available course 
+#with the student mail get his available courses
+#show those only to the users use get availabe_course in db.py
+
+b)on the values getting pressed add the values to the database
+insert the mail id and registered course in register course table usinfg teh insert method  in db.py
+
+#marksheet_upload.html
+6)after the student has registered do the taskes for marksheet upload
+a)get the available course 
+b)store the uploaded certificate in the database
+
+#Admin_Viewer 
+1)page fetch data from nptel_marks table
+#do a direct fetch and paste there
+2)populate in html
+
+#verify.html page
+7)in verify.html pull all the details from the databse to html
+
+done 9:19
+
+## html doubts
+1)where page to assign course to the semester
+page should also be usec to modify the courses for future use cases
+2)

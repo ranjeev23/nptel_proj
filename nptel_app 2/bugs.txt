@@ -1,0 +1,1 @@
+1) in registration page when the first field is pressed no description comes but when sec is pressed and then 1 is pressed we get output
